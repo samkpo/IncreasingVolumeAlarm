@@ -25,7 +25,6 @@ import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 
 public class IncreasingVolume implements IXposedHookLoadPackage {
-    private static String MODULE_PATH = null;
     private static String APP_TO_HACK = "com.android.deskclock";
     private boolean mIncreasingVolumeDefault = true;
     private boolean mVibratePhoneDefault = false;
