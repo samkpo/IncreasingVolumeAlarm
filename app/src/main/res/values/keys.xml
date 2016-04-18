@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Typeface key and default value -->
+    <string translatable="false" name="pref_increase_volume">increasing_volume</string>
+    <string translatable="false" name="pref_vibrate_alarm">vibrate_alarm</string>
+
+    <!-- Show icon key -->
+    <string translatable="false" name="pref_show_launcher_icon">show_launcher_icon</string>
+</resources>

@@ -51,11 +51,10 @@ public class IncreasingVolume implements IXposedHookLoadPackage {
         XposedHelpers.findAndHookConstructor("com.android.deskclock.provider.Alarm", lpparam.classLoader, new XC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                if(mIncreasingVolumeDefault)
-                    XposedHelpers.setObjectField(param.thisObject, "increasingVolume", mIncreasingVolumeDefault);
-
-                if(mVibratePhoneDefault)
-                    XposedHelpers.setObjectField(param.thisObject, "vibrate", mVibratePhoneDefault);
+                //Volume increase
+                XposedHelpers.setObjectField(param.thisObject, "increasingVolume", mIncreasingVolumeDefault);
+                //Alarm vibrate
+                XposedHelpers.setObjectField(param.thisObject, "vibrate", mVibratePhoneDefault);
             }
         });
 

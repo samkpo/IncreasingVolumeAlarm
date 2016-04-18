@@ -9,7 +9,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 23
 
-	//Get year
+        //Get year
         def buildYear = "date +%Y".execute().text
         resValue "string", "currentBuildYear", buildYear
         printf("Year: " + buildYear)
@@ -43,6 +43,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    provided files('lib/XposedBridgeApi-20150213.jar')
+    provided 'de.robv.android.xposed:api:82'
+    provided 'de.robv.android.xposed:api:82:sources'
 }

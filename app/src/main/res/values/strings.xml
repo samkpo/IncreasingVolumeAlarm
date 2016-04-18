@@ -1,3 +1,31 @@
 <resources>
+    <!-- App name, and activities titles -->
     <string name="app_name">Increasing Volume Alarm</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preferences strings -->
+    <string name="increasing_volume">Increasing volume</string>
+    <string name="alarm_vibrate">Vibrate on alarm</string>
+    <string name="show_icon_launcher_string">Show icon in the launcher</string>
+
+    <!-- General -->
+    <string name="action_ok">OK</string>
+    <string name="preference_category_general_string">General</string>
+
+    <!-- About dialog -->
+    <string name="action_about_app">About</string>
+    <string name="title_about_app">About app</string>
+    <string name="about_app_changelog">Changelog</string>
+    <string name="about_app_summary">v%1$s\nCopyright &#169; %2$s Aguilera Dario</string>
+    <string name="about_body"><![CDATA[
+        <b>%1$s</b> - <a href="mailto:%2$s">Email</a>.
+        <a href="https://github.com/samkpo/IncreasingVolumeAlarm">Github</a><br/><br/>
+        Small Xposed module to set increasing volume alarms in android clock (doesn\'t work with
+        Google\'s one) as default, and remove vibrate option also as default, both of them together
+        or just one.
+        This was developed tested with CyanogenMOD 13. Other ROMS may or may not work.<br/><br/>
+        Thanks to:<br/>
+            - <a href="https://github.com/rovo89">rovo89</a> for creating Xposed<br/>
+    ]]></string>
+
 </resources>
