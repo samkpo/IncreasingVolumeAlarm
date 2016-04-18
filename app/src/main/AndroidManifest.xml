@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dario.samkpo.com.increasingvolumealarm">
+    package="com.samkpo.dario.increasingvolumealarm">
 
     <application
         android:allowBackup="true"
@@ -7,6 +7,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+	<meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="A simple module to make the alarms volume to increase slowly as default" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="78" />
 
     </application>
 

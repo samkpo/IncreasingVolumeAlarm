@@ -1,0 +1,8 @@
+Version 0.1.0
+-----------
+First usable version
+
+Features
+* Set's every new alarm option "increasing volume" to true.
+* Set's every new alarm option "vibrate" to false.
+
