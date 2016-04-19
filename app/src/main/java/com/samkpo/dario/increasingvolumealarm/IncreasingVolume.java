@@ -25,12 +25,16 @@ import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 
 public class IncreasingVolume implements IXposedHookLoadPackage {
-    private static String APP_TO_HACK = "com.android.deskclock";
+    private static String APPS_TO_HACK[] = {
+            "com.android.deskclock",
+            "com.google.android.deskclock"
+    };
     private boolean mIncreasingVolumeDefault = true;
     private boolean mVibratePhoneDefault = false;
+    private int mDefaultTab = 0;
 
     public void handleLoadPackage(final LoadPackageParam lpparam) throws Throwable {
-        if(!lpparam.packageName.equals(APP_TO_HACK))
+        if(!lpparam.packageName.equals(APPS_TO_HACK[0]))// && !lpparam.packageName.equals(APPS_TO_HACK[1]))
         	return;
 
         XposedBridge.log("Loaded app: " + lpparam.packageName + ". We are in!!");
@@ -46,6 +50,16 @@ public class IncreasingVolume implements IXposedHookLoadPackage {
         mIncreasingVolumeDefault = pref.getBoolean("increasing_volume", true);
         //Vibrate cell on alarm
         mVibratePhoneDefault = pref.getBoolean("vibrate_alarm", false);
+        //Default tab
+        mDefaultTab = Integer.decode(pref.getString("default_deskclock_tab", "0"));
+
+        //Default tab
+        XposedHelpers.findAndHookMethod("com.android.deskclock.DeskClock", lpparam.classLoader, "initViews", new XC_MethodHook() {
+            @Override
+            protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+                XposedHelpers.setObjectField(param.thisObject, "mSelectedTab", mDefaultTab);
+            }
+        });
 
         //Hook the constructor
         XposedHelpers.findAndHookConstructor("com.android.deskclock.provider.Alarm", lpparam.classLoader, new XC_MethodHook() {

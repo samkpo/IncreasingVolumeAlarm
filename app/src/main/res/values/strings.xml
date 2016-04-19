@@ -7,6 +7,7 @@
     <string name="increasing_volume">Increasing volume</string>
     <string name="alarm_vibrate">Vibrate on alarm</string>
     <string name="show_icon_launcher_string">Show icon in the launcher</string>
+    <string name="default_deskclock_tab_string">Default app tab</string>
 
     <!-- General -->
     <string name="action_ok">OK</string>

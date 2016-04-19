@@ -33,6 +33,15 @@
             android:key="@string/pref_vibrate_alarm"
             android:title="@string/alarm_vibrate" />
 
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/strings_values_dc_tab"
+            android:entryValues="@array/pref_values_dc_tab"
+            android:key="@string/pref_default_dclock_tab"
+            android:negativeButtonText="@null"
+            android:positiveButtonText="@null"
+            android:title="@string/default_deskclock_tab_string" />
+
     </PreferenceCategory>
 
     <!-- About dialog -->
